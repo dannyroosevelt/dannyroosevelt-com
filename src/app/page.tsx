@@ -16,7 +16,7 @@ export default function Home() {
           </p>
         </a>
         <a
-          href="https://dannyroosevelt.com/Danny-Roosevelt-Resume.pdf"
+          href="/danny-roosevelt-resume.pdf"
           className="rounded-lg border border-transparent p-4 md:mb-100 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
           target="_blank"
           rel="noopener noreferrer"
