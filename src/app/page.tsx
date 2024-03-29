@@ -2,7 +2,7 @@ import CustomLink from "./CustomLink";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between pb-10 px-5 font-mono">
+    <main className="flex min-h-screen flex-col items-center justify-between pb-10 px-5 font-mono text-slate-800 dark:text-slate-400 dark:bg-slate-950">
       <div className="z-10 max-w-5xl w-full items-right justify-between text-sm lg:flex">
       <div className="fixed top-3 right-10 flex flex-col sm:flex-row w-full items-end justify-end bg-gradient-to-t from-white via-white dark:from-black dark:via-black static h-auto w-auto bg-none">
         <a
@@ -29,11 +29,11 @@ export default function Home() {
       </div>
       <div className="grid text-left sm:text-center w-full text-left">
         <div className="h-32">
-          <h1 className={`text-5xl font-mono text-slate-800`}>
+          <h1 className={`text-5xl font-mono`}>
             Danny Roosevelt
           </h1>
         </div>
-        <ul className="grid grid-flow-row auto-rows-max text-left sm:text-center font-regular text-sm text-slate-600">
+        <ul className="grid grid-flow-row auto-rows-max text-left sm:text-center font-regular text-sm dark:text-slate-400 text-slate-600">
           <li className="pb-5">
             - Current: Product @&nbsp;
             <CustomLink href="https://pipedream.com">Pipedream</CustomLink>
