@@ -7,7 +7,7 @@ export default function Home() {
       <div className="fixed top-3 right-10 flex flex-col sm:flex-row w-full items-end justify-end bg-gradient-to-t from-white via-white dark:from-black dark:via-black static h-auto w-auto bg-none">
         <a
           href="https://www.linkedin.com/in/dannyroosevelt/"
-          className="rounded-lg border border-transparent py-4 md:py-10 px-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
+          className="rounded-lg border border-transparent p-4 md:mb-100 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -17,7 +17,7 @@ export default function Home() {
         </a>
         <a
           href="https://dannyroosevelt.com/Danny-Roosevelt-Resume.pdf"
-          className="rounded-lg border border-transparent py-4 md:py-10 px-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
+          className="rounded-lg border border-transparent p-4 md:mb-100 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -47,7 +47,7 @@ export default function Home() {
             &nbsp;— worked on new product bets.
           </li>
           <li className="pb-5">
-            - Before that: Co-founder of MailCoach, we built Rate That Meeting and&nbsp;
+            - Before that: Co-founded MailCoach — we built Rate That Meeting and&nbsp;
             <CustomLink href="https://shoulditbeameeting.com">
               Should It Be A Meeting
             </CustomLink>
@@ -56,7 +56,7 @@ export default function Home() {
           <li className="pb-5">
             - And before that: Product @&nbsp;
             <CustomLink href="https://techcrunch.com/2014/11/11/confirmed-yahoo-acquires-brightroll/">BrightRoll</CustomLink>
-            &nbsp;(then Yahoo), Genius @&nbsp;
+            &nbsp;(then Yahoo), Mac Genius @&nbsp;
             <CustomLink href="https://www.apple.com/store">Apple</CustomLink>
             &nbsp;Store,&nbsp;
             <CustomLink href="https://www.ucsb.edu/">UCSB</CustomLink>
