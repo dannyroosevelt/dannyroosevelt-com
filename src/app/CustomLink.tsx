@@ -9,7 +9,7 @@ interface CustomLinkProps {
 const CustomLink = ({ href, children }: CustomLinkProps) => {
   return (
     <Link
-      className="inline-block transition-transform font-bold hover:underline hover:text-blue-600"
+      className="inline-block transition-transform font-semibold hover:underline hover:text-blue-500"
       target="_blank"
       rel="noopener"
       href={href}

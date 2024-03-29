@@ -55,11 +55,11 @@ export default function Home() {
           </li>
           <li className="pb-5">
             - And before that: Product @&nbsp;
-            <span className="font-bold">BrightRoll</span>
+            <CustomLink href="https://techcrunch.com/2014/11/11/confirmed-yahoo-acquires-brightroll/">BrightRoll</CustomLink>
             &nbsp;(then Yahoo), Genius @&nbsp;
-            <span className="font-bold">Apple</span>
+            <CustomLink href="https://www.apple.com/store">Apple</CustomLink>
             &nbsp;Store,&nbsp;
-            <span className="font-bold">UCSB</span>
+            <CustomLink href="https://www.ucsb.edu/">UCSB</CustomLink>
             &nbsp;grad.
           </li>
         </ul>
