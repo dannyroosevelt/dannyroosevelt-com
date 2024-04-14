@@ -35,19 +35,19 @@ export default function Home() {
         </div>
         <ul className="grid grid-flow-row auto-rows-max text-left sm:text-center font-regular text-sm dark:text-slate-400 text-slate-600">
           <li className="pb-5">
-            <strong>Current:&nbsp;</strong>Product @&nbsp;
+            <strong>Currently:&nbsp;</strong>Product @&nbsp;
             <CustomLink href="https://pipedream.com">Pipedream</CustomLink>
             &nbsp;— the fastest way for developers to connect to any API.
           </li>
           <li className="pb-5">
-            <strong>Previous:&nbsp;</strong>Product @&nbsp;
+            <strong>Previously:&nbsp;</strong>Product @&nbsp;
             <CustomLink href="https://dropbox.com">
               Dropbox
             </CustomLink>
             &nbsp;— worked on new product bets.
           </li>
           <li className="pb-5">
-            <strong>Before that:&nbsp;</strong> Co-founded MailCoach — we built Rate That Meeting and&nbsp;
+            <strong>Before that:&nbsp;</strong>Co-founded MailCoach — we built productivity apps including MailCoach, Rate That Meeting, and&nbsp;
             <CustomLink href="https://shoulditbeameeting.com">
               Should It Be A Meeting
             </CustomLink>
