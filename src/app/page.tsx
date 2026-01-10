@@ -62,16 +62,7 @@ export default function Home() {
           </li>
         </ul>
       </div>
-      <div className="mb-0 grid text-center max-w-5xl w-full text-center">
-        <p className={`text-xs font-regular text-slate-500`}>
-          Built using&nbsp;
-          <CustomLink href="https://nextjs.org/">Next.js</CustomLink>
-          <span>
-          &nbsp;and&nbsp;
-          </span>
-          <CustomLink href="https://vercel.com/">Vercel</CustomLink>
-        </p>
-      </div>
+      <div />
     </main>
   );
 }
