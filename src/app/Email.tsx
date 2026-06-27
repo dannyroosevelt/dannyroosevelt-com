@@ -17,9 +17,9 @@ const Email = () => {
   return (
     <a
       href={`mailto:${address}`}
-      className="rounded-lg border border-transparent p-4 md:mb-100 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
+      className="rounded-lg border border-transparent p-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
     >
-      <p className="m-0 max-w-[30ch] text-sm opacity-50 text-balance">Email</p>
+      <p className="m-0 text-sm opacity-50">Email</p>
     </a>
   );
 };
