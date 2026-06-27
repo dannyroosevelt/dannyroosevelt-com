@@ -14,11 +14,12 @@ import {
   XIcon,
 } from "./Icons";
 
-// Assembled from parts and only attached to the link on the client (after
-// mount). The mailto therefore never appears in the prerendered HTML that
-// email-harvesting scrapers read, while real (JS-enabled) visitors get a
-// normal clickable link.
-const EMAIL = `${["dl", "roosevelt"].join("")}@${["gmail", "com"].join(".")}`;
+// The address is base64-encoded here so it can't be regex-harvested from the
+// (public) repo source, and it's only decoded + attached to the link on the
+// client after mount — so the plaintext mailto never appears in the
+// prerendered HTML that scrapers read either. Real, JS-enabled visitors still
+// get a normal clickable link. (Decodes to the obvious address for any human.)
+const ENCODED_EMAIL = "ZGxyb29zZXZlbHRAZ21haWwuY29t";
 
 // false during SSR / initial hydration, true once mounted on the client.
 const useMounted = () =>
@@ -68,7 +69,11 @@ const TopNav = () => {
   const menuRef = useRef<HTMLDivElement>(null);
 
   const hrefFor = (item: NavItem) =>
-    item.email ? (mounted ? `mailto:${EMAIL}` : undefined) : item.href;
+    item.email
+      ? mounted
+        ? `mailto:${atob(ENCODED_EMAIL)}`
+        : undefined
+      : item.href;
 
   useEffect(() => {
     if (!open) return;
