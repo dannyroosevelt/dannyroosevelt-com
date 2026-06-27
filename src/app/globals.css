@@ -1,17 +1,19 @@
 @import "tailwindcss";
 
+/* Drive `dark:` utilities off a `.dark` class on <html> instead of the OS
+   preference, so the theme toggle can override the system setting. */
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+.dark {
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 0, 0, 0;
+  --background-end-rgb: 0, 0, 0;
 }
 
 body {

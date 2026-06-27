@@ -1,6 +1,7 @@
 import CustomLink from "./CustomLink";
 import TopNav from "./TopNav";
-import { CodeIcon } from "./Icons";
+import ThemeToggle from "./ThemeToggle";
+import { GitHubIcon } from "./Icons";
 
 const REPO_URL = "https://github.com/dannyroosevelt/dannyroosevelt-com";
 
@@ -45,16 +46,18 @@ export default function Home() {
           </li>
         </ul>
       </div>
-      <footer className="w-full max-w-7xl flex justify-center sm:justify-end mt-10">
+      <footer className="w-full max-w-7xl flex items-center justify-start gap-1 mt-10">
         <a
           href={REPO_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 text-xs opacity-40 transition-opacity hover:opacity-100"
+          aria-label="View source on GitHub"
+          title="View source on GitHub"
+          className="rounded-lg border border-transparent p-2 opacity-50 transition-colors transition-opacity hover:border-gray-300 hover:bg-gray-100 hover:opacity-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
         >
-          <CodeIcon className="h-4 w-4" />
-          <span>View source</span>
+          <GitHubIcon className="h-5 w-5" />
         </a>
+        <ThemeToggle />
       </footer>
     </main>
   );

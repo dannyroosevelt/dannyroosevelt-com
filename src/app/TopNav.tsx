@@ -116,11 +116,10 @@ const TopNav = () => {
                 key={item.label}
                 href={item.href}
                 onClick={() => setOpen(false)}
-                className="flex items-center justify-end gap-2 px-4 py-2 opacity-60 transition-opacity hover:opacity-100"
+                className="px-4 py-2 text-right opacity-60 transition-opacity hover:opacity-100"
                 {...anchorProps(item)}
               >
                 {item.label}
-                {item.icon}
               </a>
             ))}
           </div>
