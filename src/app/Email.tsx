@@ -5,12 +5,12 @@ import { useMemo } from "react";
 // The address is assembled at runtime from parts so it never appears as a
 // literal string in the page source. This defeats the naive scrapers that
 // harvest `mailto:` links for spam, while keeping a normal clickable link.
-const USER = ["roosevelt", "danny"];
+const USER = ["dl", "roosevelt"];
 const DOMAIN = ["gmail", "com"];
 
 const Email = () => {
   const address = useMemo(
-    () => `${USER.join(".")}@${DOMAIN.join(".")}`,
+    () => `${USER.join("")}@${DOMAIN.join(".")}`,
     []
   );
 
