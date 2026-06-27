@@ -1,6 +1,6 @@
 import CustomLink from "./CustomLink";
-import Email from "./Email";
-import { GitHubIcon, IconLink, LinkedInIcon, XIcon, CodeIcon } from "./Icons";
+import TopNav from "./TopNav";
+import { CodeIcon } from "./Icons";
 
 const REPO_URL = "https://github.com/dannyroosevelt/dannyroosevelt-com";
 
@@ -8,29 +8,7 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between pb-10 px-5 font-mono text-slate-800 dark:text-slate-400 dark:bg-slate-950">
       <header className="z-10 w-full max-w-7xl mt-3">
-        <nav className="flex flex-wrap items-center justify-end gap-x-1 text-sm">
-          <a
-            href="/danny-roosevelt-resume.pdf"
-            className="rounded-lg border border-transparent p-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <p className="m-0 text-sm opacity-50">Resume</p>
-          </a>
-          <Email />
-          <IconLink
-            href="https://www.linkedin.com/in/dannyroosevelt/"
-            label="LinkedIn"
-          >
-            <LinkedInIcon className="h-5 w-5" />
-          </IconLink>
-          <IconLink href="https://x.com/droosevelt" label="X (Twitter)">
-            <XIcon className="h-5 w-5" />
-          </IconLink>
-          <IconLink href="https://github.com/dannyroosevelt" label="GitHub">
-            <GitHubIcon className="h-5 w-5" />
-          </IconLink>
-        </nav>
+        <TopNav />
       </header>
       <div className="grid text-left sm:text-center w-full text-left flex items-start mt-14">
         <div className="h-32">

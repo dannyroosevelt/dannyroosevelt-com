@@ -4,30 +4,6 @@ type IconProps = {
   className?: string;
 };
 
-// An external link rendered as an icon, styled to match the text nav links.
-export const IconLink = ({
-  href,
-  label,
-  children,
-}: {
-  href: string;
-  label: string;
-  children: React.ReactNode;
-}) => (
-  <a
-    href={href}
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label={label}
-    title={label}
-    className="rounded-lg border border-transparent p-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-  >
-    <span className="block opacity-50 transition-opacity hover:opacity-100">
-      {children}
-    </span>
-  </a>
-);
-
 // Simple single-path brand/utility icons (24x24, currentColor) so they
 // inherit text color and stay dependency-free.
 
@@ -81,5 +57,40 @@ export const CodeIcon = ({ className }: IconProps) => (
   >
     <polyline points="16 18 22 12 16 6" />
     <polyline points="8 6 2 12 8 18" />
+  </svg>
+);
+
+export const MenuIcon = ({ className }: IconProps) => (
+  <svg
+    role="img"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    aria-hidden="true"
+    className={className}
+  >
+    <line x1="3" y1="12" x2="21" y2="12" />
+    <line x1="3" y1="6" x2="21" y2="6" />
+    <line x1="3" y1="18" x2="21" y2="18" />
+  </svg>
+);
+
+export const CloseIcon = ({ className }: IconProps) => (
+  <svg
+    role="img"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    aria-hidden="true"
+    className={className}
+  >
+    <line x1="18" y1="6" x2="6" y2="18" />
+    <line x1="6" y1="6" x2="18" y2="18" />
   </svg>
 );
