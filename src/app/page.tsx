@@ -53,7 +53,7 @@ export default function Home() {
           rel="noopener noreferrer"
           aria-label="View source on GitHub"
           title="View source on GitHub"
-          className="rounded-lg border border-transparent p-2 opacity-50 transition-colors transition-opacity hover:border-gray-300 hover:bg-gray-100 hover:opacity-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
+          className="rounded-lg border border-transparent p-2 opacity-50 transition hover:border-gray-300 hover:bg-gray-100 hover:opacity-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
         >
           <GitHubIcon className="h-5 w-5" />
         </a>

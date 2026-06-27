@@ -1,6 +1,11 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import React, {
+  useEffect,
+  useRef,
+  useState,
+  useSyncExternalStore,
+} from "react";
 import {
   CloseIcon,
   GitHubIcon,
@@ -9,20 +14,31 @@ import {
   XIcon,
 } from "./Icons";
 
-// Assembled at runtime so the address never appears as a literal string in
-// the page source (defeats naive email-harvesting scrapers).
+// Assembled from parts and only attached to the link on the client (after
+// mount). The mailto therefore never appears in the prerendered HTML that
+// email-harvesting scrapers read, while real (JS-enabled) visitors get a
+// normal clickable link.
 const EMAIL = `${["dl", "roosevelt"].join("")}@${["gmail", "com"].join(".")}`;
+
+// false during SSR / initial hydration, true once mounted on the client.
+const useMounted = () =>
+  useSyncExternalStore(
+    () => () => {},
+    () => true,
+    () => false
+  );
 
 type NavItem = {
   label: string;
-  href: string;
+  href?: string;
   icon?: React.ReactNode;
   external?: boolean;
+  email?: boolean;
 };
 
 const items: NavItem[] = [
   { label: "Resume", href: "/danny-roosevelt-resume.pdf", external: true },
-  { label: "Email", href: `mailto:${EMAIL}` },
+  { label: "Email", email: true },
   {
     label: "LinkedIn",
     href: "https://www.linkedin.com/in/dannyroosevelt/",
@@ -48,7 +64,11 @@ const anchorProps = (item: NavItem) =>
 
 const TopNav = () => {
   const [open, setOpen] = useState(false);
+  const mounted = useMounted();
   const menuRef = useRef<HTMLDivElement>(null);
+
+  const hrefFor = (item: NavItem) =>
+    item.email ? (mounted ? `mailto:${EMAIL}` : undefined) : item.href;
 
   useEffect(() => {
     if (!open) return;
@@ -75,7 +95,7 @@ const TopNav = () => {
         {items.map((item) => (
           <a
             key={item.label}
-            href={item.href}
+            href={hrefFor(item)}
             aria-label={item.label}
             title={item.icon ? item.label : undefined}
             className="rounded-lg border border-transparent p-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
@@ -114,7 +134,7 @@ const TopNav = () => {
             {items.map((item) => (
               <a
                 key={item.label}
-                href={item.href}
+                href={hrefFor(item)}
                 onClick={() => setOpen(false)}
                 className="px-4 py-2 text-right opacity-60 transition-opacity hover:opacity-100"
                 {...anchorProps(item)}

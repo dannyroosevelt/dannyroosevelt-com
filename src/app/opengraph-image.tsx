@@ -1,3 +1,5 @@
+import { readFile } from "node:fs/promises";
+import { join } from "node:path";
 import { ImageResponse } from "next/og";
 
 export const alt = "Danny Roosevelt";
@@ -7,7 +9,13 @@ export const size = {
 };
 export const contentType = "image/png";
 
-export default function OpengraphImage() {
+export default async function OpengraphImage() {
+  // Read the bundled mono font at build time (no network dependency) so the
+  // card renders in the same monospace aesthetic as the site.
+  const jetBrainsMono = await readFile(
+    join(process.cwd(), "src/app/fonts/JetBrainsMono-Bold.ttf")
+  );
+
   return new ImageResponse(
     (
       <div
@@ -20,13 +28,12 @@ export default function OpengraphImage() {
           alignItems: "flex-start",
           backgroundColor: "#020617",
           padding: "80px",
-          fontFamily: "monospace",
+          fontFamily: "JetBrains Mono",
         }}
       >
         <div
           style={{
             fontSize: 84,
-            fontWeight: 700,
             color: "#f8fafc",
             letterSpacing: "-0.02em",
           }}
@@ -46,6 +53,14 @@ export default function OpengraphImage() {
     ),
     {
       ...size,
+      fonts: [
+        {
+          name: "JetBrains Mono",
+          data: jetBrainsMono,
+          style: "normal",
+          weight: 700,
+        },
+      ],
     }
   );
 }
