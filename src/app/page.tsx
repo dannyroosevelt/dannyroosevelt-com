@@ -1,32 +1,16 @@
 import CustomLink from "./CustomLink";
+import TopNav from "./TopNav";
+import ThemeToggle from "./ThemeToggle";
+import { GitHubIcon } from "./Icons";
+
+const REPO_URL = "https://github.com/dannyroosevelt/dannyroosevelt-com";
 
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between pb-10 px-5 font-mono text-slate-800 dark:text-slate-400 dark:bg-slate-950">
-      <div className="z-10 max-w-7xl w-full items-right justify-between text-sm lg:flex">
-      <div className="flex flex-col sm:flex-row w-full items-end justify-end bg-gradient-to-t from-white via-white dark:from-black dark:via-black static h-auto w-auto bg-none mt-3">
-        <a
-          href="https://www.linkedin.com/in/dannyroosevelt/"
-          className="rounded-lg border border-transparent p-4 md:mb-100 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            LinkedIn
-          </p>
-        </a>
-        {/* <a
-          href="/danny-roosevelt-resume.pdf"
-          className="rounded-lg border border-transparent p-4 md:mb-100 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Resume
-          </p>
-        </a> */}
-      </div>
-      </div>
+      <header className="z-10 w-full max-w-7xl mt-3">
+        <TopNav />
+      </header>
       <div className="grid text-left sm:text-center w-full text-left flex items-start mt-14">
         <div className="h-32">
           <h1 className={`text-5xl font-mono`}>
@@ -62,7 +46,19 @@ export default function Home() {
           </li>
         </ul>
       </div>
-      <div />
+      <footer className="w-full max-w-7xl flex items-center justify-start gap-1 mt-10">
+        <a
+          href={REPO_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="View source on GitHub"
+          title="View source on GitHub"
+          className="rounded-lg border border-transparent p-2 opacity-50 transition hover:border-gray-300 hover:bg-gray-100 hover:opacity-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
+        >
+          <GitHubIcon className="h-5 w-5" />
+        </a>
+        <ThemeToggle />
+      </footer>
     </main>
   );
 }

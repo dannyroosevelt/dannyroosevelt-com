@@ -1,0 +1,7 @@
+JetBrainsMono-Bold.ttf is JetBrains Mono, (c) 2020 The JetBrains Mono Project
+Authors, licensed under the SIL Open Font License, Version 1.1.
+
+License: https://github.com/JetBrains/JetBrainsMono/blob/master/OFL.txt
+
+Bundled here so the Open Graph image (src/app/opengraph-image.tsx) can render
+in a monospace face without a network dependency at build time.
