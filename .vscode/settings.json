@@ -3,7 +3,7 @@
     "source.fixAll.eslint": "explicit"
   },
   "eslint.run": "onType",
-  "eslint.useFlatConfig": false,
+  "eslint.useFlatConfig": true,
   "eslint.validate": [
     "javascript",
     "javascriptreact",
